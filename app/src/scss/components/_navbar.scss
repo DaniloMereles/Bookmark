@@ -1,0 +1,112 @@
+.navbar{
+    width: 100%;
+    height: 70px;
+    padding-left: 100px;
+    padding-right: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &__links{
+        &__link{
+            margin-left: 35px;
+            color: var(--VeryDarkBlue);
+            font-size: 16px;
+            &:hover{
+                color: var(--SoftRed);
+            }
+        }
+
+        .line{
+            display: non;
+        }
+
+        &__link.btn{
+            width: 120px;
+            height: 40px;
+        }
+    }
+
+    &__hamburger{
+        display: none;
+    }
+}
+
+@media(max-width: 450px){
+    .navbar{
+        width: 100%;
+        height: 60px;
+        padding-left: 30px;
+        padding-right: 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        &__links{
+            transform: translateY(-400%);
+            transition: transform 1s ease-in;
+            width: 85%;
+            height: 55vh;
+            background-color: var(--VeryDarkBlue);
+            position: absolute;
+            top: 10vh;
+            left: 8%;
+            z-index: 20;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            &__link{
+                color: var(--White);
+                margin: 30px;
+            }
+
+            .line{
+                width: 90%;
+                height: 2px;
+                background-color: var(--White);
+            }
+        }
+
+        &__links.active{
+            transform: translateY(0%);
+            transition: transform 1s ease-in;
+        }
+
+        &__hamburger{
+            width: 5%;
+            height: inherit;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            &__item{
+                display: block;
+                width: 30px;
+                padding: 1px;
+                height: 3px;
+                background-color: var(--VeryDarkBlue);
+                margin-top: 5px;
+                transition: all .50s ease;
+            }
+        }
+
+        .toggle{
+            .item1{
+                transform: rotate(-45deg) translate(-5px, 6px);
+            }
+
+            .item2{
+                opacity: 0;
+                transform: translateX(-1px);
+                transition: transform 2s ease;
+                transform: rotate(45deg) translate(-5px, -6px);
+            }
+
+            .item3{
+                transform: rotate(45deg) translate(-5px, -6px);
+            }
+        }
+    }
+}

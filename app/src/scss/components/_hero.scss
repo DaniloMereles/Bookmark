@@ -1,0 +1,123 @@
+.hero{
+    width: 100%;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+    overflow: hidden;  
+    &::after{
+        content: '';
+        position: absolute;
+        right: -60px;
+        top: 20vh;
+        border-bottom-left-radius: 30%;
+        z-index: -10;
+        width: 40%;
+        height: 330px;
+        background: var(--SoftBlue);
+    }
+
+    &__container{
+        width: 100%;
+        max-width: 1300px;
+        height: 95%;
+        padding: 10px;
+        margin-left: 40px;
+        margin-right: 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        &__texts{
+            width: 620px;
+            height: 95%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            &__title{
+                font-weight: 500;
+                font-size: 50px;
+                color: var(--VeryDarkBlue);
+                margin-bottom: 10px;
+            }
+
+            &__description{
+                width: 80%;
+                font-size: 16px;
+                margin-bottom: 10px;
+                color: var(--GrayishBlue);
+            }
+        }
+
+        &__img{
+            width: 600px;
+            height: 95%;
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+}
+
+@media(max-width: 450px){
+    .hero{
+        width: 100%;
+        height: 675px;
+        padding: 0;
+        &::after{
+            content: '';
+            position: absolute;
+            right: -60px;
+            top: 15vh;
+            border-bottom-left-radius: 30%;
+            z-index: -10;
+            width: 95%;
+            height: 225px;
+            background: var(--SoftBlue);
+        }
+        &__container{
+            width: 100%;
+            max-width: 400px;
+            height: 90%;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: flex-end;
+            flex-direction: column-reverse;
+            &__img{
+                width: 100%;
+                height: 300px;
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+            &__texts{
+                width: 100%;
+                height: 400px;
+                text-align: center;
+                &__title{
+                    font-size: 30px;
+                }
+
+                &__description{
+                    display: inline-block;
+                    margin: 0 auto;
+                    font-size: 15px;
+                }
+
+                &__btn-area{
+                    display: flex;
+
+                    .btn{
+                        height: 40px;
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+}
